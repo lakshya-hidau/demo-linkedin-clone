@@ -7,6 +7,7 @@ import ImageIcon from "@mui/icons-material/Image";
 import Advertisment from "../../components/Advertisment/advertisment";
 import axios from "axios";
 import socket from "../../../socket";
+import { formatDistanceToNow } from "date-fns";
 
 const Messages = () => {
   const [conversations, setConversations] = useState([]);
@@ -120,6 +121,8 @@ const Messages = () => {
         { withCredentials: true }
       )
       .then((res) => {
+        setMessages([...messages, res.data]);
+
         socket.emit("sendMessage", activeConvId, res.data);
         setMessageText("");
       })
@@ -138,11 +141,6 @@ const Messages = () => {
           <Card padding={0}>
             <div className="border-b-1 border-gray-300 px-5 py-2 font-semibold text-shadow-lg">
               Messaging
-            </div>
-            <div className="border-b-1 border-gray-300 px-5 py-2">
-              <div className="py-1 px-3 cursor-pointer hover:bg-green-900 bg-green-800 font-semibold flex gap-2 w-fit rounded-2xl text-white">
-                Focused <ArrowDropDownIcon />{" "}
-              </div>
             </div>
 
             {/* div for chat */}
@@ -212,8 +210,19 @@ const Messages = () => {
                             />
                           </div>
                           <div className="mb-2 w-full">
-                            <div className="text-md">
-                              {item?.sender?.f_name}
+                            <div className="flex justify-between items-center">
+                              <div className="text-md">
+                                {item?.sender?.f_name}
+                              </div>
+                              <div className="text-xs text-gray-500">
+                                {item.createdAt &&
+                                  formatDistanceToNow(
+                                    new Date(item.createdAt),
+                                    {
+                                      addSuffix: true,
+                                    }
+                                  )}
+                              </div>
                             </div>
 
                             <div className="text-sm mt-6 hover:bg-gray-200">

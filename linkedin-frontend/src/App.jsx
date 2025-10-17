@@ -14,7 +14,8 @@ import Profile from "./pages/Profile/profile";
 import AllActivities from "./pages/AllActivities/allActivities";
 import SingleActivity from "./pages/SingleActivity/singleActivity";
 import Notification from "./pages/Notification/notification";
-
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function App() {
   const [isLogin, setIsLogin] = useState(localStorage.getItem("isLogin"));
 
@@ -100,6 +101,7 @@ function App() {
         />
       </Routes>
       <Footer />
+      <ToastContainer />
     </div>
   );
 }

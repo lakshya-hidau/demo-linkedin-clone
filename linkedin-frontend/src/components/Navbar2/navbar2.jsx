@@ -126,7 +126,7 @@ const Navbar2 = () => {
           {/* Home */}
           <Link
             to={"/feeds"}
-            className="group flex flex-col items-center justify-center h-full px-2 pt-2 cursor-pointer"
+            className="group flex flex-col items-center justify-center h-full px-3 py-2 cursor-pointer rounded-lg transition-colors duration-200 hover:bg-gray-100"
           >
             <HomeIcon
               className={`text-xl ${
@@ -149,7 +149,7 @@ const Navbar2 = () => {
           {/* My Network */}
           <Link
             to={"/myNetwork"}
-            className="group flex flex-col items-center justify-center h-full px-2 pt-2 cursor-pointer"
+            className="group flex flex-col items-center justify-center h-full px-3 py-2 cursor-pointer rounded-lg transition-colors duration-200 hover:bg-gray-100"
           >
             <PeopleIcon
               className={`text-xl ${
@@ -172,7 +172,7 @@ const Navbar2 = () => {
           {/* Resume */}
           <Link
             to={"/resume"}
-            className="group flex flex-col items-center justify-center h-full px-2 pt-2 cursor-pointer"
+            className="group flex flex-col items-center justify-center h-full px-3 py-2 cursor-pointer rounded-lg transition-colors duration-200 hover:bg-gray-100"
           >
             <WorkIcon
               className={`text-xl ${
@@ -195,7 +195,7 @@ const Navbar2 = () => {
           {/* Messaging */}
           <Link
             to={"/messages"}
-            className="group flex flex-col items-center justify-center h-full px-2 pt-2 cursor-pointer"
+            className="group flex flex-col items-center justify-center h-full px-3 py-2 cursor-pointer rounded-lg transition-colors duration-200 hover:bg-gray-100"
           >
             <ChatIcon
               className={`text-xl ${
@@ -218,7 +218,7 @@ const Navbar2 = () => {
           {/* Notifications */}
           <Link
             to={"/notification"}
-            className="group flex flex-col items-center justify-center h-full px-2 pt-2 cursor-pointer"
+            className="group flex flex-col items-center justify-center h-full px-3 py-2 cursor-pointer rounded-lg transition-colors duration-200 hover:bg-gray-100"
           >
             <div>
               <NotificationsIcon
@@ -249,7 +249,7 @@ const Navbar2 = () => {
           {/* Me */}
           <Link
             to={`/profile/${userData?._id}`}
-            className="group flex flex-col items-center justify-center h-full px-2 pt-2 cursor-pointer"
+            className="group flex flex-col items-center justify-center h-full px-3 py-2 cursor-pointer rounded-lg transition-colors duration-200 hover:bg-gray-100"
           >
             <img
               className="w-6 h-6 rounded-full border-2 border-white"
